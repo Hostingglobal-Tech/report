@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyota Customer Analysis Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #e60000;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        h1 {
+            margin-top: 0;
+        }
+        h2 {
+            color: #e60000;
+            border-bottom: 2px solid #e60000;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #333;
+        }
+        .date-info {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: right;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .summary-box {
+            background-color: #f8f8f8;
+            border-left: 4px solid #e60000;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+        .chart-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+        .chart-bar {
+            width: 40px;
+            background-color: #e60000;
+            margin: 0 10px;
+            position: relative;
+        }
+        .chart-label {
+            position: absolute;
+            bottom: -30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+        }
+        .chart-value {
+            position: absolute;
+            top: -25px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .kpi-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .kpi-card {
+            flex: 1;
+            min-width: 200px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .kpi-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e60000;
+            margin: 10px 0;
+        }
+        .kpi-title {
+            font-size: 14px;
+            color: #666;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 12px;
+            color: #7f8c8d;
+            text-align: center;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .vehicle-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .vehicle-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .vehicle-name {
+            font-weight: bold;
+            color: #e60000;
+            margin-bottom: 10px;
+        }
+        .map-container {
+            height: 400px;
+            background-color: #eee;
+            margin: 20px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">TOYOTA</div>
+        <h1>Customer Analysis Report</h1>
+    </header>
+
+    <div class="date-info">
+        <p><strong>Report Date:</strong> April 29, 2025</p>
+        <p><strong>Data Current As Of:</strong> April 29, 2025 08:49</p>
+        <p><strong>Prepared For:</strong> leinhard@gmail.com</p>
+    </div>
+
+    <div class="summary-box">
+        <h2>Executive Summary</h2>
+        <p>This report provides a comprehensive analysis of Toyota customer data as of April 29, 2025. The analysis includes customer demographics, sales performance, popular vehicle models, customer satisfaction metrics, and regional distribution of customers.</p>
+        <p>Key findings from this analysis include [placeholder for key insights].</p>
+    </div>
+
+    <section>
+        <h2>Customer Demographics</h2>
+        <p>Overview of Toyota customer base demographics including age distribution, gender, income levels, and household information.</p>
+        
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <div class="kpi-title">Average Customer Age</div>
+                <div class="kpi-value">42.5</div>
+                <div class="kpi-trend">+1.2 from last year</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Gender Distribution</div>
+                <div class="kpi-value">54% / 46%</div>
+                <div class="kpi-trend">Male / Female</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Average Household Income</div>
+                <div class="kpi-value">$78,500</div>
+                <div class="kpi-trend">+5.3% from last year</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Repeat Customers</div>
+                <div class="kpi-value">68%</div>
+                <div class="kpi-trend">+2.1% from last year</div>
+            </div>
+        </div>
+
+        <h3>Age Distribution</h3>
+        <div class="chart-container">
+            <div class="chart-bar" style="height: 40%;">
+                <div class="chart-value">15%</div>
+                <div class="chart-label">18-25</div>
+            </div>
+            <div class="chart-bar" style="height: 60%;">
+                <div class="chart-value">22%</div>
+                <div class="chart-label">26-35</div>
+            </div>
+            <div class="chart-bar" style="height: 80%;">
+                <div class="chart-value">30%</div>
+                <div class="chart-label">36-45</div>
+            </div>
+            <div class="chart-bar" style="height: 65%;">
+                <div class="chart-value">24%</div>
+                <div class="chart-label">46-55</div>
+            </div>
+            <div class="chart-bar" style="height: 25%;">
+                <div class="chart-value">9%</div>
+                <div class="chart-label">56+</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Sales Performance</h2>
+        <p>Analysis of sales data including total units sold, revenue, popular models, and sales trends.</p>
+        
+        <table>
+            <tr>
+                <th>Month</th>
+                <th>Units Sold</th>
+                <th>Revenue</th>
+                <th>Top Model</th>
+                <th>YoY Growth</th>
+            </tr>
+            <tr>
+                <td>January 2025</td>
+                <td>12,450</td>
+                <td>$342.5M</td>
+                <td>RAV4</td>
+                <td>+3.2%</td>
+            </tr>
+            <tr>
+                <td>February 2025</td>
+                <td>11,875</td>
+                <td>$328.1M</td>
+                <td>Camry</td>
+                <td>+2.8%</td>
+            </tr>
+            <tr>
+                <td>March 2025</td>
+                <td>13,620</td>
+                <td>$375.4M</td>
+                <td>RAV4</td>
+                <td>+4.5%</td>
+            </tr>
+            <tr>
+                <td>April 2025</td>
+                <td>12,980</td>
+                <td>$356.9M</td>
+                <td>Corolla</td>
+                <td>+3.7%</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Popular Vehicle Models</h2>
+        <p>Overview of the most popular Toyota vehicle models among customers, including preferences by demographic segments.</p>
+        
+        <div class="vehicle-container">
+            <div class="vehicle-card">
+                <div class="vehicle-name">Toyota RAV4</div>
+                <p><strong>Market Share:</strong> 28%</p>
+                <p><strong>Customer Satisfaction:</strong> 4.7/5.0</p>
+                <p><strong>Popular Among:</strong> Families, 35-45 age group</p>
+                <p><strong>Key Features:</strong> Safety, Reliability, Space</p>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-name">Toyota Camry</div>
+                <p><strong>Market Share:</strong> 22%</p>
+                <p><strong>Customer Satisfaction:</strong> 4.5/5.0</p>
+                <p><strong>Popular Among:</strong> Business professionals, 40-55 age group</p>
+                <p><strong>Key Features:</strong> Comfort, Fuel efficiency, Technology</p>
+            </div>
+            <div class="vehicle-card">
+                <div class="vehicle-name">Toyota Corolla</div>
+                <p><strong>Market Share:</strong> 18%</p>
+                <p><strong>Customer Satisfaction:</strong> 4.3/5.0</p>
+                <p><strong>Popular Among:</strong> First-time buyers, 25-35 age group</p>
+                <p><strong>Key Features:</strong> Affordability, Reliability, Fuel efficiency</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Customer Satisfaction</h2>
+        <p>Analysis of customer satisfaction metrics, including Net Promoter Score (NPS), service satisfaction, and product quality ratings.</p>
+        
+        <div class="kpi-container">
+            <div class="kpi-card">
+                <div class="kpi-title">Net Promoter Score</div>
+                <div class="kpi-value">72</div>
+                <div class="kpi-trend">+3 points from last year</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Service Satisfaction</div>
+                <div class="kpi-value">4.6/5.0</div>
+                <div class="kpi-trend">+0.2 from last year</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Product Quality Rating</div>
+                <div class="kpi-value">4.8/5.0</div>
+                <div class="kpi-trend">+0.1 from last year</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Customer Retention</div>
+                <div class="kpi-value">82%</div>
+                <div class="kpi-trend">+1.5% from last year</div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Regional Distribution</h2>
+        <p>Geographic distribution of Toyota customers across different regions, including market penetration and regional preferences.</p>
+        
+        <div class="map-container">
+            [Placeholder for Regional Distribution Map]
+        </div>
+        
+        <table>
+            <tr>
+                <th>Region</th>
+                <th>Customer Count</th>
+                <th>Market Share</th>
+                <th>Top Model</th>
+                <th>YoY Growth</th>
+            </tr>
+            <tr>
+                <td>Northeast</td>
+                <td>245,680</td>
+                <td>22%</td>
+                <td>RAV4</td>
+                <td>+2.8%</td>
+            </tr>
+            <tr>
+                <td>Southeast</td>
+                <td>312,450</td>
+                <td>28%</td>
+                <td>Camry</td>
+                <td>+3.5%</td>
+            </tr>
+            <tr>
+                <td>Midwest</td>
+                <td>198,320</td>
+                <td>18%</td>
+                <td>Highlander</td>
+                <td>+2.1%</td>
+            </tr>
+            <tr>
+                <td>West</td>
+                <td>278,540</td>
+                <td>25%</td>
+                <td>Prius</td>
+                <td>+4.2%</td>
+            </tr>
+            <tr>
+                <td>Southwest</td>
+                <td>156,780</td>
+                <td>14%</td>
+                <td>Tacoma</td>
+                <td>+3.7%</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Recommendations</h2>
+        <div class="summary-box">
+            <h3>Key Insights and Action Items</h3>
+            <ol>
+                <li><strong>Target Marketing:</strong> Focus marketing efforts on the 36-45 age demographic, which represents the largest customer segment.</li>
+                <li><strong>Product Development:</strong> Continue to enhance the RAV4 and Camry models, which remain the most popular among customers.</li>
+                <li><strong>Regional Strategy:</strong> Increase marketing and dealership presence in the Midwest region, which shows the lowest market share.</li>
+                <li><strong>Customer Retention:</strong> Develop loyalty programs targeting the 68% of repeat customers to further improve retention rates.</li>
+                <li><strong>Digital Engagement:</strong> Enhance digital customer engagement platforms to better reach the growing 26-35 age demographic.</li>
+            </ol>
+        </div>
+    </section>
+
+    <footer>
+        <p>Report generated by Toyota Customer Analytics System on April 29, 2025 at 08:49</p>
+        <p>Prepared for: leinhard@gmail.com</p>
+        <p>This report contains placeholder data for demonstration purposes only.</p>
+        <p>For questions or further analysis, please contact your Toyota account representative.</p>
+    </footer>
+</body>
+</html>
